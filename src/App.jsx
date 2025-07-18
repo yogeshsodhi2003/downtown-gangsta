@@ -17,7 +17,6 @@ function App() {
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
-    console.log("GSAP & ScrollTrigger registered");
 
     // Set initial states
     gsap.set(".dtg-logo", {
@@ -41,7 +40,6 @@ function App() {
         opacity: 0,
         onUpdate: function () {
           if (this.progress() >= 0.9) {
-            console.log("Intro complete");
             const svgElement = document.querySelector(".svg");
             if (svgElement) svgElement.remove();
             setShowContent(true);
@@ -86,11 +84,11 @@ function App() {
     const scrollTl = gsap.timeline({
       scrollTrigger: {
         trigger: ".page2",
-        start: "center center",
-        end: "+=1000",
+        start: "bottom bottom",
+        end: "+=400",
         scrub: true,
         markers: true,
-        onUpdate: (self) => console.log("ScrollTrigger progress:", self.progress),
+        pin:true,
       },
     });
 
@@ -104,7 +102,7 @@ function App() {
       start: "top center",
       markers: true,
       onEnter: () => {
-        console.log("Last page heading triggered");
+  
         gsap.to(".last-page-heading", {
           scale: 1,
           opacity: 1,
@@ -121,8 +119,6 @@ function App() {
       main.addEventListener("mousemove", function (e) {
         const xMove = (e.clientX / window.innerWidth - 0.5) * 40;
         const yMove = (e.clientY / window.innerHeight - 0.5) * 40;
-        console.log("Mouse moved:", xMove, yMove);
-
         gsap.to(".main-text", { x: xMove * 1.4, y: yMove * 1.4 });
         gsap.to(".sky", { x: xMove, y: yMove });
         gsap.to(".bg", { x: xMove * 0.5, y: yMove * 0.5 });
@@ -215,7 +211,8 @@ function App() {
         </svg>
       </div>
       {showContent && (
-        <div className="main bg-black h-full w-full rotate-[-19deg] scale-[1.5] overflow-hidden">
+        <div className=" overflow-hidden">
+        <div className="main bg-black h-full w-screen rotate-[-19deg] scale-[1.5] overflow-hidden">
           <div className="landing h-screen w-full relative overflow-hidden">
             <img
               className="sky absolute top-0 left-0 object-cover w-full h-full scale-[1.2] rotate-[-30deg]"
@@ -261,7 +258,7 @@ function App() {
             </div>
           </div>
         </div>
-      )}
+      
       <div className="page2 h-screen w-screen bg-red-200 overflow-hidden flex flex-col relative">
         <div className="topPanel absolute top-0 left-0 h-1/2 w-full bg-white z-10 flex items-center justify-center">
           <span className="text-6xl font-bold text-black">DOWNTOWN</span>
@@ -270,7 +267,7 @@ function App() {
         <h1 className="text-5xl font-bold text-white text-center z-20 mt-auto mb-auto">Welcome to the world</h1>
 
         <div className="bottomPanel absolute bottom-0 left-0 h-1/2 w-full bg-white z-10 flex items-center justify-center">
-          <span className="text-6xl font-bold text-black">DOWNTOWN</span>
+          <span className="text-6xl  font-bold text-black">DOWNTOWN</span>
         </div>
       </div>
 
@@ -279,6 +276,8 @@ function App() {
           COMING SOON
         </h1>
       </div>
+      </div>
+      )}
     </>
   );
 }
