@@ -88,7 +88,7 @@ function App() {
         end: "+=400",
         scrub: true,
         markers: true,
-        pin:true,
+        pin: true,
       },
     });
 
@@ -102,7 +102,6 @@ function App() {
       start: "top center",
       markers: true,
       onEnter: () => {
-  
         gsap.to(".last-page-heading", {
           scale: 1,
           opacity: 1,
@@ -212,71 +211,76 @@ function App() {
       </div>
       {showContent && (
         <div className=" overflow-hidden">
-        <div className="main bg-black h-full w-screen rotate-[-19deg] scale-[1.5] overflow-hidden">
-          <div className="landing h-screen w-full relative overflow-hidden">
-            <img
-              className="sky absolute top-0 left-0 object-cover w-full h-full scale-[1.2] rotate-[-30deg]"
-              src="./sky.png"
-              alt=""
-            />
-            <img
-              className="bg absolute top-0 left-0 object-cover w-full h-full scale-[1.2]"
-              src="./bg.png"
-              alt=""
-            />
-
-            <h1 className="main-text absolute top-[20%] left-[40%] text-white scale-[4]">
-              DOWNTOWN
-            </h1>
-            <h1 className="main-text absolute top-[30%] left-[50%] text-white scale-[4]">
-              GANGSTA
-            </h1>
-
-            <img
-              className="character absolute bottom-[-20%] left-[40%] object-cover scale-[1.2] rotate-[-35deg]"
-              src="./character.png"
-              alt=""
-            />
-            <div className="btmbar absolute bottom-0 w-full py-15 px-10 bg-gradient-to-t from-black to-transparent">
-              <div className="scroll-indicator flex direction-column align-center justify-center text-white absolute top-[10%] left-[10%] transform -translate-x-1/2">
-                <span className="text-xl mb-2">Scroll Down</span>
-                <svg
-                  className="scroll-arrow w-6 h-6"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
-                </svg>
-              </div>
+          <div className="main bg-black h-full w-screen rotate-[-19deg] scale-[1.5] overflow-hidden">
+            <div className="landing h-screen w-full relative overflow-hidden">
               <img
-                className="absolute bottom-[5%] right-[2%] h-[60%]"
-                src="./ps5.png"
+                className="sky absolute top-0 left-0 object-cover w-full h-full scale-[1.2] rotate-[-30deg]"
+                src="./sky.png"
                 alt=""
               />
+              <img
+                className="bg absolute top-0 left-0 object-cover w-full h-full scale-[1.2]"
+                src="./bg.png"
+                alt=""
+              />
+
+              <h1 className="main-text absolute top-[20%] left-[40%] text-white scale-[4]">
+                DOWNTOWN
+              </h1>
+              <h1 className="main-text absolute top-[30%] left-[50%] text-white scale-[4]">
+                GANGSTA
+              </h1>
+
+              <img
+                className="character absolute bottom-[-20%] left-[40%] object-cover scale-[1.2] rotate-[-35deg]"
+                src="./character.png"
+                alt=""
+              />
+              <div className="btmbar absolute bottom-0 w-full py-15 px-10 bg-gradient-to-t from-black to-transparent">
+                <div className="scroll-indicator flex direction-column align-center justify-center text-white absolute top-[10%] left-[10%] transform -translate-x-1/2">
+                  <span className="text-xl mb-2">Scroll Down</span>
+                  <svg
+                    className="scroll-arrow w-6 h-6"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+                  </svg>
+                </div>
+                <img
+                  className="absolute bottom-[5%] right-[2%] h-[60%]"
+                  src="./ps5.png"
+                  alt=""
+                />
+              </div>
             </div>
           </div>
-        </div>
-      
-      <div className="page2 h-screen w-screen bg-red-200 overflow-hidden flex flex-col relative">
-        <div className="topPanel absolute top-0 left-0 h-1/2 w-full bg-white z-10 flex items-center justify-center">
-          <span className="text-6xl font-bold text-black">DOWNTOWN</span>
-        </div>
 
-        <h1 className="text-5xl font-bold text-white text-center z-20 mt-auto mb-auto">Welcome to the world</h1>
+          <div className="page2 h-screen w-screen bg-black  flex flex-col relative">
+            <h1 className="text-5xl  font-bold text-white text-center  mt-auto mb-auto">
+              Welcome to the world
+            </h1>
+            <div className="topPanel absolute top-0 left-0 h-1/2 w-full bg-white flex justify-center ">
+              <span className="absolute bottom-[-10%] text-8xl font-bold text-black">
+                DOWNTOWN
+              </span>
+            </div>
 
-        <div className="bottomPanel absolute bottom-0 left-0 h-1/2 w-full bg-white z-10 flex items-center justify-center">
-          <span className="text-6xl  font-bold text-black">DOWNTOWN</span>
+            <div className="bottomPanel absolute  bottom-0 left-0 h-1/2 w-full bg-white flex justify-center ">
+              <span className="text-8xl absolute top-[-10%] font-bold text-black">
+                DOWNTOWN
+              </span>
+            </div>
+          </div>
+
+          <div className="last-page animation relative w-full h-screen bg-black">
+            <h1 className="last-page-heading text-white text-9xl absolute top-[30%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 font-bold">
+              COMING SOON
+            </h1>
+          </div>
         </div>
-      </div>
-
-      <div className="last-page animation relative w-full h-screen bg-black">
-        <h1 className="last-page-heading text-white text-9xl absolute top-[30%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 font-bold">
-          COMING SOON
-        </h1>
-      </div>
-      </div>
       )}
     </>
   );
